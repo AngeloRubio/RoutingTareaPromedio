@@ -61,15 +61,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let estudiante of estudiantes | filtro : filtro">
-      <td>{{ estudiante.cedula }}</td>
-      <td>{{ estudiante.nombre }}</td>
-      <td>{{ estudiante.apellido }}</td>
-      <td>{{ estudiante.asignatura }}</td>
-      <td>{{ estudiante.nota1 }}</td>
-      <td>{{ estudiante.nota2 }}</td>
-      <td>{{ estudiante.promedio }}</td>
-      <td>{{ estudiante.estado }}</td>
+    <tr *ngFor="let est of estudiantes | filtro : filtro">
+      <td>{{ est.cedula }}</td>
+      <td>{{ est.nombre }}</td>
+      <td>{{ est.apellido }}</td>
+      <td>{{ est.asignatura }}</td>
+      <td>{{ est.nota1 }}</td>
+      <td>{{ est.nota2 }}</td>
+      <td>{{ est.promedio }}</td>
+      <td>{{ est.estado }}</td>
     </tr>
   </tbody>
 </table>

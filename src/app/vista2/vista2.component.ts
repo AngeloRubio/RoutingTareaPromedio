@@ -11,10 +11,11 @@ export class Vista2Component implements OnInit {
   estudiantes: Estudiante[] = [];
   promedioGeneral: number = 0;
 
+
   constructor(private estudianteService: EstudianteService) { }
 
   ngOnInit() {
-    this.estudiantes = this.estudianteService.estudiantes;
+    this.estudiantes = this.estudianteService.getDatos();
     
     const sumaPromedios = this.estudiantes.reduce((suma, estudiante) => suma + estudiante.promedio, 0);
     this.promedioGeneral = sumaPromedios / this.estudiantes.length;
