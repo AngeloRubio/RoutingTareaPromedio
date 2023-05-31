@@ -1,17 +1,22 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Estudiante } from '../models/Estudiante';
+import { EstudianteService } from '../estudiante.service';
+
 
 @Component({
   selector: 'app-vista1',
   templateUrl: './vista1.component.html',
-  styleUrls: ['./vista1.component.css']
+  styleUrls: ['./vista1.component.css'],
+  providers: [EstudianteService]
 })
 export class Vista1Component {
-  // Variables y métodos necesarios para agregar alumnos y aplicar filtros
+  estudiantes: Estudiante[] = [];
+  estudiante: Estudiante = new Estudiante();
+  filtro: string = 'todos';
 
-  constructor(private router: Router) {}
-
-  navegarAVista2(): void {
-    this.router.navigate(['/vista2']);
+  agregarEstudiante(estudiante: Estudiante) {
+    this.estudiantes.push(estudiante);
+    this.estudiante = new Estudiante(); // Reinicia el objeto estudiante después de agregarlo
   }
 }

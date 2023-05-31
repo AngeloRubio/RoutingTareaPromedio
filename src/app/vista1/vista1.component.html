@@ -1,1 +1,77 @@
-<p>vista1 works!</p>
+<!-- vista1.component.html -->
+<h2>Agregar Estudiante</h2>
+
+<div>
+  <label>Cédula:</label>
+  <input type="text" [(ngModel)]="estudiante.cedula" />
+</div>
+
+<div>
+  <label>Nombre:</label>
+  <input type="text" [(ngModel)]="estudiante.nombre" />
+</div>
+
+<div>
+  <label>Apellido:</label>
+  <input type="text" [(ngModel)]="estudiante.apellido" />
+</div>
+
+<div>
+  <label>Asignatura:</label>
+  <input type="text" [(ngModel)]="estudiante.asignatura" />
+</div>
+
+<div>
+  <label>nota1:</label>
+  <input type="text" [(ngModel)]="estudiante.nota1" />
+</div>
+
+<div>
+    <label>nota2:</label>
+    <input type="text" [(ngModel)]="estudiante.nota2" />
+  </div>
+
+
+<button (click)="agregarEstudiante(estudiante)">Agregar</button>
+
+<hr />
+
+<h2>Listado de Estudiantes</h2>
+
+<div>
+  <label>Filtros:</label>
+  <select [(ngModel)]="filtro">
+    <option value="todos">Todos</option>
+    <option value="aprobados">Aprobados</option>
+    <option value="reprobados">Reprobados</option>
+  </select>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cédula</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Asignatura</th>
+      <th>Nota 1</th>
+      <th>Nota 2</th>
+      <th>Promedio</th>
+      <th>Estado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let estudiante of estudiantes | filtro : filtro">
+      <td>{{ estudiante.cedula }}</td>
+      <td>{{ estudiante.nombre }}</td>
+      <td>{{ estudiante.apellido }}</td>
+      <td>{{ estudiante.asignatura }}</td>
+      <td>{{ estudiante.nota1 }}</td>
+      <td>{{ estudiante.nota2 }}</td>
+      <td>{{ estudiante.promedio }}</td>
+      <td>{{ estudiante.estado }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<button routerLink="/vista2">Mostrar Promedio Total</button>

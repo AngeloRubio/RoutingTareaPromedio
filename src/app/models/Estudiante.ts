@@ -1,13 +1,23 @@
+// models/Estudiante.ts
 export class Estudiante {
+    cedula: string;
     nombre: string;
     apellido: string;
-    estado: boolean;
-    edad: string;
-
-    constructor(nombre: string, apellido: string, estado: boolean, edad: string) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.estado = estado;
-        this.edad = edad;
+    asignatura: string;
+    nota1: number;
+    nota2: number;
+    promedio: number;
+    estado: string;
+  
+    constructor() {
+      this.cedula = '';
+      this.nombre = '';
+      this.apellido = '';
+      this.asignatura = '';
+      this.nota1 = 0;
+      this.nota2 = 0;
+      this.promedio = 0;
+      this.estado = '';
     }
-}
+  }
+  

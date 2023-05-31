@@ -7,6 +7,9 @@ import { Vista1Component } from './vista1/vista1.component';
 import { Vista2Component } from './vista2/vista2.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { FiltroPipe } from './models/filtro.pipe';
+import { FormsModule } from '@angular/forms';
+import { EstudianteService } from './estudiante.service';
 
 
 @NgModule({
@@ -16,12 +19,14 @@ import { FooterComponent } from './footer/footer.component';
     Vista2Component,
     NavbarComponent,
     FooterComponent,
+    FiltroPipe,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [EstudianteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
